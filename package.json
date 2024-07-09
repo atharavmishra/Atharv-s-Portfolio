@@ -6,10 +6,10 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "next start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "next test",
+    "eject": "next eject",
     "dev": "next dev"
   },
   "dependencies": {
