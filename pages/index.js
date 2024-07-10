@@ -22,7 +22,7 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
 
   const handleRedirect = () => {
-    window.open ('https://github.com/atharavmishra','_blank'); // Replace with your GitHub URL
+    window.open ('https://github.com/atharavmishra','_blank');
   };
 
   return (
