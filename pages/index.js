@@ -1,6 +1,5 @@
 import Head from "next/head";
 import {
-  AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillGithub,
   AiFillFilePdf,
@@ -8,9 +7,9 @@ import {
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
 import deved from "../public/dev-ed-wave.png";
-import code from "../public/code.png";
-import design from "../public/design.png";
-import consulting from "../public/consulting.png";
+import oraFinanceMockup from "../public/ora_finance_mockup.png";
+import oraFinanceMockup2 from "../public/ora_finance_mockup_2.png";
+import oraFinanceMockup3 from "../public/ora_finance_mockup3.png";
 import Image from "next/image";
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
@@ -95,23 +94,69 @@ export default function Home() {
           </div>
           <div className="lg:flex gap-10">
             
-            <div className="text-end shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
-              <Image src={design} width={100} height={100} />
-              <h3 className="text-lg font-medium pt-8 pb-2  ">
-                Beautiful Designs
-              </h3>
-              <p className="py-2">
-                Creating elegant designs suited for your needs following core
-                design theory.
-              </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
-            </div>
+          <div className="text-start shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1 flex" style={{ height: '600px' }}>
+  <div style={{ width: '300px', height: '100%', position: 'relative' }}>
+    <Image src={oraFinanceMockup2} layout="fill" objectFit="cover" />
+  </div>
+  <div style={{ width: '300px', height: '100%', position: 'relative' }}>
+    <Image src={oraFinanceMockup} layout="fill" objectFit="cover" />
+  </div>
+  <div style={{ width: '300px', height: '100%', position: 'relative' }}>
+    <Image src={oraFinanceMockup3} layout="fill" objectFit="cover" />
+  </div>
+  <div className="flex-1 ml-4">
+    <h3 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
+      Ora Finance
+    </h3>
+    <p className="py-2">
+      Creating elegant designs suited for your needs following core
+      design theory.
+    </p>
+    <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
+    <p className="text-gray-800 py-1">Photoshop</p>
+    <p className="text-gray-800 py-1">Illustrator</p>
+    <p className="text-gray-800 py-1">Figma</p>
+    <p className="text-gray-800 py-1">Indesign</p>
+  </div>
+</div>
+
+
+            
            
              </div>
+
+             <div className="lg:flex gap-10">
+            
+            <div className="text-start shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1 flex" style={{ height: '600px' }}>
+    <div style={{ width: '300px', height: '100%', position: 'relative' }}>
+      <Image src={oraFinanceMockup2} layout="fill" objectFit="cover" />
+    </div>
+    <div style={{ width: '300px', height: '100%', position: 'relative' }}>
+      <Image src={oraFinanceMockup} layout="fill" objectFit="cover" />
+    </div>
+    <div style={{ width: '300px', height: '100%', position: 'relative' }}>
+      <Image src={oraFinanceMockup3} layout="fill" objectFit="cover" />
+    </div>
+    <div className="flex-1 ml-4">
+      <h3 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
+        Ora Finance
+      </h3>
+      <p className="py-2">
+        Creating elegant designs suited for your needs following core
+        design theory.
+      </p>
+      <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
+      <p className="text-gray-800 py-1">Photoshop</p>
+      <p className="text-gray-800 py-1">Illustrator</p>
+      <p className="text-gray-800 py-1">Figma</p>
+      <p className="text-gray-800 py-1">Indesign</p>
+    </div>
+  </div>
+  
+  
+              
+             
+               </div>
         </section>
         <section className="py-10">
           <div>
