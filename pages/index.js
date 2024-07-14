@@ -109,17 +109,17 @@ I've been developing Android apps for over 4 years now, and I really enjoy creat
       </div>
     </div>
     <div className="w-full lg:w-full p-4">
-      <h3 className="text-4xl py-2 text-teal-300 font-medium dark:text-teal-400 md:text-4xl">
+      <h3 className="text-4xl py-2 text-teal-300 font-medium dark:text-teal-400 md:text-3xl">
         Ora Finance App
       </h3>
       <p className="py-2">
-        Creating elegant designs suited for your needs following core design theory.
-      </p>
-      <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
+        Developed      
+ </p>
+      {/* <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
       <p className="text-gray-800 py-1">Photoshop</p>
       <p className="text-gray-800 py-1">Illustrator</p>
       <p className="text-gray-800 py-1">Figma</p>
-      <p className="text-gray-800 py-1">Indesign</p>
+      <p className="text-gray-800 py-1">Indesign</p> */}
     </div>
   </div>
 </div>
