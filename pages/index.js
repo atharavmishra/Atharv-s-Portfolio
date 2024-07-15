@@ -84,6 +84,12 @@ export default function Home() {
               </li>
             </ul>
           </nav>
+
+          <div className="flex justify-center mt-20">
+              <div className="bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden md:h-96 md:w-96">
+                <Image src={deved} layout="responsive" objectFit="cover"/>
+              </div>
+            </div>
           <div className="text-center p-10 py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
               Atharv Mishra
@@ -114,11 +120,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="flex justify-center mt-20">
-              <div className="bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden md:h-96 md:w-96">
-                <Image src={deved} layout="responsive" objectFit="cover"/>
-              </div>
-            </div>
+          
 
           </div>
 
