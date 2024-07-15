@@ -53,7 +53,7 @@ export default function Home() {
   const handleRedirectLinkedIn = () => {
     window.open('https://www.linkedin.com/in/atharv-mishra-1149821a9', '_blank');
   };
-  
+
 
   return (
     <div className={`${darkMode ? "dark" : ""} w-full h-full`}>
@@ -106,7 +106,7 @@ export default function Home() {
                   onClick={handleRedirectLinkedIn}
                 />
               </div>
-              
+
               <div className="flex justify-center">
                 <AiFillGithub
                   className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer"
@@ -114,9 +114,12 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-              <Image src={deved} layout="fill" objectFit="cover" />
+            <div className="flex justify-center mt-20">
+              <div className="bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden md:h-96 md:w-96">
+                <Image src={deved} layout="responsive" objectFit="cover"/>
+              </div>
             </div>
+
           </div>
 
         </section>
@@ -130,17 +133,22 @@ export default function Home() {
           </div>
           <div className="lg:flex gap-10">
             <div className="text-start p-10 rounded-xl my-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
-              <div className="w-full lg:w-full p-2 flex flex-wrap gap-4 justify-center">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '30%', position: 'relative' }}>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
                   <Image src={oraFinanceMockup2} layout="responsive" objectFit="cover" />
                 </div>
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '30%', position: 'relative' }}>
+              </div>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
                   <Image src={oraFinanceMockup} layout="responsive" objectFit="cover" />
                 </div>
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '30%', position: 'relative' }}>
+              </div>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
                   <Image src={oraFinanceMockup3} layout="responsive" objectFit="cover" />
                 </div>
               </div>
+
 
               <div className="w-full lg:w-full p-4 shadow-lg rounded-lg bg-white dark:bg-gray-800">
                 <h3 className="text-4xl py-2 text-gray-300 font-medium dark:text-gray-400 md:text-3xl">
