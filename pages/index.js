@@ -28,8 +28,32 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
 
   const handleRedirect = () => {
-    window.open ('https://github.com/atharavmishra','_blank');
+    window.open('https://github.com/atharavmishra', '_blank');
   };
+
+  const handleRedirect1 = () => {
+    window.open('https://github.com/atharavmishra', '_blank');
+  };
+
+  const handleRedirect2 = () => {
+    window.open('https://github.com/atharavmishra', '_blank');
+  };
+
+  const handleRedirect3 = () => {
+    window.open('https://github.com/atharavmishra', '_blank');
+  };
+
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/atharva_mishra.pdf';
+    link.download = 'AtharvResume.pdf';
+    link.click();
+  };
+
+  const handleRedirectLinkedIn = () => {
+    window.open('https://www.linkedin.com/in/atharv-mishra-1149821a9', '_blank');
+  };
+  
 
   return (
     <div className={`${darkMode ? "dark" : ""} w-full h-full`}>
@@ -50,147 +74,171 @@ export default function Home() {
                 />
               </li>
               <li>
-               
-
-                 <a
-      className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-      href="#"
-      onClick={handleRedirect}
-    >
-      Github
-    </a>
+                <a
+                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+                  href="#"
+                  onClick={handleRedirect}
+                >
+                  Github
+                </a>
               </li>
             </ul>
           </nav>
           <div className="text-center p-10 py-10">
-  <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
-    Atharv Mishra
-  </h2>
-  <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-    Android App developer.
-  </h3>
-  <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-    Hi, I am Atharv Mishra a passionate Android developer with over 2.5 years of Experience. I love building Apps that create magic.
-  </p>
-  <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-    <AiFillFilePdf />
-    <AiFillLinkedin />
-    <AiFillGithub />
-  </div>
-  <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-    <Image src={deved} layout="fill" objectFit="cover" />
-  </div>
-</div>
+            <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
+              Atharv Mishra
+            </h2>
+            <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
+              Android App developer.
+            </h3>
+            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
+              Hey there! I'm an Android developer with 2.5 years of experience of crafting awesome mobile applications. With a passion for turning ideas into stunning apps, I specialize in creating magic on small screens. From sleek designs to seamless functionality, I bring apps to life with my skills. Let's build something amazing together! 🚀  </p>
+            <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
+              <div className="flex justify-center">
+                <AiFillFilePdf
+                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer"
+                  onClick={handleDownload}
+                />
+              </div>
+              <div className="flex justify-center">
+                <AiFillLinkedin
+                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer"
+                  onClick={handleRedirectLinkedIn}
+                />
+              </div>
+              
+              <div className="flex justify-center">
+                <AiFillGithub
+                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer"
+                  onClick={handleRedirect}
+                />
+              </div>
+            </div>
+            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
+              <Image src={deved} layout="fill" objectFit="cover" />
+            </div>
+          </div>
 
         </section>
         <section>
           <div>
             <h3 className="text-3xl py-1 dark:text-white ">My Projects</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-I've been developing Android apps for over 4 years now, and I really enjoy creating mobile applications that users love to interact with. I'm skilled in languages like Java and Kotlin, and I use tools like Android Studio to bring ideas to life. From designing how apps look and feel to connecting them with online services, I focus on making sure everything works smoothly. I'm always learning new ways to improve user experiences and make apps more reliable and efficient.
+              I've been developing Android apps for over 4 years now, and I really enjoy creating mobile applications that users love to interact with. I'm skilled in languages like Java and Kotlin, and I use tools like Android Studio to bring ideas to life. From designing how apps look and feel to connecting them with online services, I focus on making sure everything works smoothly. I'm always learning new ways to improve user experiences and make apps more reliable and efficient.
             </p>
-            
+
           </div>
           <div className="lg:flex gap-10">
-  <div className="text-start shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1 flex flex-wrap" style={{ height: 'auto' }}>
-    <div className="w-full lg:w-1/3 p-2">
-      <div style={{ width: '100%', position: 'relative' }}>
-        <Image src={oraFinanceMockup2} layout="responsive" objectFit="cover" />
-      </div>
-    </div>
-    <div className="w-full lg:w-1/3 p-2">
-      <div style={{ width: '100%', position: 'relative' }}>
-        <Image src={oraFinanceMockup} layout="responsive" objectFit="cover" />
-      </div>
-    </div>
-    <div className="w-full lg:w-1/3 p-2">
-      <div style={{ width: '100%', position: 'relative' }}>
-        <Image src={oraFinanceMockup3} layout="responsive" objectFit="cover" />
-      </div>
-    </div>
-    <div className="w-full lg:w-full p-4">
-      <h3 className="text-4xl py-2 text-teal-300 font-medium dark:text-teal-400 md:text-3xl">
-        Ora Finance App
-      </h3>
-      <p className="py-2">
-        Developed      
- </p>
-      {/* <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-      <p className="text-gray-800 py-1">Photoshop</p>
-      <p className="text-gray-800 py-1">Illustrator</p>
-      <p className="text-gray-800 py-1">Figma</p>
-      <p className="text-gray-800 py-1">Indesign</p> */}
-    </div>
-  </div>
-</div>
-<div className="lg:flex gap-10">
-  <div className="text-start shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1 flex flex-wrap" style={{ height: 'auto' }}>
-    <div className="w-full lg:w-1/3 p-2">
-      <div style={{ width: '100%', position: 'relative' }}>
-        <Image src={nitr3} layout="responsive" objectFit="cover" />
-      </div>
-    </div>
-    <div className="w-full lg:w-1/3 p-2">
-      <div style={{ width: '100%', position: 'relative' }}>
-        <Image src={nitr1} layout="responsive" objectFit="cover" />
-      </div>
-    </div>
-    <div className="w-full lg:w-1/3 p-2">
-      <div style={{ width: '100%', position: 'relative' }}>
-        <Image src={nitr2} layout="responsive" objectFit="cover" />
-      </div>
-    </div>
-    <div className="w-full lg:w-full p-4">
-    <h3 className="text-4xl text-teal-300 font-medium dark:text-teal-400 md:text-4xl">
-    Hello NITR(NIT Rourkela) App 
-      </h3>
-      <p className="py-2">
-        Creating elegant designs suited for your needs following core design theory.
-      </p>
-      <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-      <p className="text-gray-800 py-1">Photoshop</p>
-      <p className="text-gray-800 py-1">Illustrator</p>
-      <p className="text-gray-800 py-1">Figma</p>
-      <p className="text-gray-800 py-1">Indesign</p>
-    </div>
-  </div>
-</div>
-<div className="lg:flex gap-10">
-  <div className="text-start shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1 flex flex-wrap" style={{ height: 'auto' }}>
-    <div className="w-full lg:w-1/3 p-2">
-      <div style={{ width: '100%', position: 'relative' }}>
-        <Image src={wallpaper_app1} layout="responsive" objectFit="cover" />
-      </div>
-    </div>
-    <div className="w-full lg:w-1/3 p-2">
-      <div style={{ width: '100%', position: 'relative' }}>
-        <Image src={wallpaper_app2} layout="responsive" objectFit="cover" />
-      </div>
-    </div>
-    <div className="w-full lg:w-1/3 p-2">
-      <div style={{ width: '100%', position: 'relative' }}>
-        <Image src={wallpaper_app3} layout="responsive" objectFit="cover" />
-      </div>
-    </div>
-    <div className="w-full lg:w-full p-4">
-      <h3 className="text-4xl py-2 text-teal-300 font-medium dark:text-teal-400 md:text-4xl">
-        Wallpaper App
-      </h3>
-      <p className="py-2">
-        Creating elegant designs suited for your needs following core design theory.
-      </p>
-      <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-      <p className="text-gray-800 py-1">Photoshop</p>
-      <p className="text-gray-800 py-1">Illustrator</p>
-      <p className="text-gray-800 py-1">Figma</p>
-      <p className="text-gray-800 py-1">Indesign</p>
-    </div>
-  </div>
-</div>
+            <div className="text-start p-10 rounded-xl my-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+              <div className="w-full lg:w-full p-2 flex flex-wrap gap-4 justify-center">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '30%', position: 'relative' }}>
+                  <Image src={oraFinanceMockup2} layout="responsive" objectFit="cover" />
+                </div>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '30%', position: 'relative' }}>
+                  <Image src={oraFinanceMockup} layout="responsive" objectFit="cover" />
+                </div>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '30%', position: 'relative' }}>
+                  <Image src={oraFinanceMockup3} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+
+              <div className="w-full lg:w-full p-4 shadow-lg rounded-lg bg-white dark:bg-gray-800">
+                <h3 className="text-4xl py-2 text-gray-300 font-medium dark:text-gray-400 md:text-3xl">
+                  Ora Finance App
+                </h3>
+                <p className="py-2 text-gray-800 dark:text-gray-200">
+                  Developed end-to-end loan application to streamline the process of KYC, e-Sign, loan repayments, loan status, customer ledger and much more with really elegant and user friendly UI design.
+                </p>
+                <div className="flex justify-center mt-6">
+                  <a
+                    className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md"
+                    href="#"
+                    onClick={handleRedirect1}
+                  >
+                    Live App
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div className="lg:flex gap-10">
+            <div className="text-start p-10 rounded-xl my-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                  <Image src={nitr3} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                  <Image src={nitr1} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                  <Image src={nitr2} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+              <div className="w-full lg:w-full p-4 shadow-lg rounded-lg bg-white dark:bg-gray-800">
+                <h3 className="text-3xl text-gray-300 font-medium dark:text-gra-400 md:text-3xl">
+                  Hello NITR(NIT Rourkela) App
+                </h3>
+                <p className="py-2 text-gray-800 dark:text-gray-200">
+                  Was finalist in NITR Hacksagon 2023 and Developed an App for students of NIT Rourkela that contains the contact informations of all the faculty members and lets you connect with
+                  them.
+                </p>
+                <div className="flex justify-center mt-6">
+                  <a
+                    className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md"
+                    href="#"
+                    onClick={handleRedirect2}
+                  >
+                    Live App
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div className="lg:flex gap-10">
+            <div className="text-start p-10 rounded-xl my-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                  <Image src={wallpaper_app1} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                  <Image src={wallpaper_app2} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                  <Image src={wallpaper_app3} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+              <div className="w-full lg:w-full p-4 shadow-lg rounded-lg bg-white dark:bg-gray-800">
+                <h3 className="text-4xl py-2 text-gray-300 font-medium dark:text-gray-400 md:text-4xl">
+                  Wallpaper App
+                </h3>
+                <p className="py-2 text-gray-800 dark:text-gray-200">
+                  Developed a wallpaper app where you can browse through millions of High Quality pictures and use them as wallpaper.
+                </p>
+                <div className="flex justify-center mt-6">
+                  <a
+                    className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md"
+                    href="#"
+                    onClick={handleRedirect3}
+                  >
+                    Live App
+                  </a>
+                </div>
+              </div>
 
 
-
-           
+            </div>
+          </div>
         </section>
         <section className="py-10">
           <div>
