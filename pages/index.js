@@ -29,16 +29,16 @@ export default function Home() {
     window.open('https://github.com/atharavmishra', '_blank');
   };
 
-  const handleRedirect1 = () => {
-    window.open('https://github.com/atharavmishra', '_blank');
+  const handleRedirectOraLive = () => {
+    window.open('https://play.google.com/store/apps/details?id=com.app.orafinancecustomer&pcampaignid=web_share', '_blank');
   };
 
   const handleRedirect2 = () => {
-    window.open('https://github.com/atharavmishra', '_blank');
+    //window.open('https://github.com/atharavmishra', '_blank');
   };
 
-  const handleRedirect3 = () => {
-    window.open('https://github.com/atharavmishra', '_blank');
+  const handleRedirectWallpaperApp = () => {
+    window.open('https://play.google.com/store/apps/details?id=com.dktlabs.wallpapers&pcampaignid=web_share', '_blank');
   };
 
   const handleDownload = () => {
@@ -112,7 +112,7 @@ export default function Home() {
                   onClick={handleRedirect}
                 >
                   Github
-                </a>  
+                </a>
               </li>
             </ul>
           </nav>
@@ -195,7 +195,7 @@ export default function Home() {
                   <a
                     className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md"
                     href="#"
-                    onClick={handleRedirect1}
+                    onClick={handleRedirectOraLive}
                   >
                     Live App
                   </a>
@@ -271,7 +271,7 @@ export default function Home() {
                   <a
                     className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md"
                     href="#"
-                    onClick={handleRedirect3}
+                    onClick={handleRedirectWallpaperApp}
                   >
                     Live App
                   </a>
