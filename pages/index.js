@@ -17,12 +17,10 @@ import wallpaper_app1 from "../public/wallpaper_app1.png";
 import wallpaper_app2 from "../public/wallpaper2.png";
 import wallpaper_app3 from "../public/wallpaper3.png";
 import Image from "next/image";
-import web1 from "../public/web1.png";
-import web2 from "../public/web2.png";
-import web3 from "../public/web3.png";
-import web4 from "../public/web4.png";
-import web5 from "../public/web5.png";
-import web6 from "../public/web6.png";
+import androidStudioIcon from "../public/android_studio_icon.png";
+import firebaseIcon from "../public/firebase.png";
+import javaIcon from "../public/java.png";
+import kotlinIcon from "../public/kotlin_logo.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -54,6 +52,39 @@ export default function Home() {
     window.open('https://www.linkedin.com/in/atharv-mishra-1149821a9', '_blank');
   };
 
+  const TechStack = () => {
+    return (
+      <div className="lg:flex-wrap w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
+        <h3 className="text-3xl py-4 font-semibold text-center">Tech Stack</h3>
+        <div className="flex justify-around items-center mt-6 space-x-6">
+          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+            <div className="w-16 h-16">
+              <Image src={androidStudioIcon} layout="responsive" objectFit="contain" />
+            </div>
+            <p className="mt-2 text-gray-900 dark:text-gray-200 font-semibold">Android Studio</p>
+          </div>
+          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-32 h-32">
+            <div className="w-16 h-16 mt-3">
+              <Image src={kotlinIcon} layout="responsive" objectFit="contain" />
+            </div>
+            <p className="mt-3 text-gray-900 dark:text-gray-200 font-semibold">Kotlin</p>
+          </div>
+          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-32 h-32">
+            <div className="w-14 h-14 justify-center">
+              <Image src={javaIcon} layout="responsive" objectFit="contain" />
+            </div>
+            <p className="mt-8   text-gray-900 dark:text-gray-200 font-semibold">Java</p>
+          </div>
+          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-32 h-32">
+            <div className="w-16 h-16 mt-3">
+              <Image src={firebaseIcon} layout="responsive" objectFit="contain" />
+            </div>
+            <p className="mt-3 text-gray-900 dark:text-gray-200 font-semibold">Firebase</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`${darkMode ? "dark" : ""} w-full h-full`}>
@@ -86,12 +117,12 @@ export default function Home() {
           </nav>
 
           <div className="flex justify-center mt-20">
-              <div className="bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden md:h-96 md:w-96">
-                <Image src={deved} layout="responsive" objectFit="cover"/>
-              </div>
+            <div className="bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden md:h-96 md:w-96">
+              <Image src={deved} layout="responsive" objectFit="cover" />
             </div>
+          </div>
           <div className="text-center p-10 py-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
+            <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black bg-clip-text text-transparent">
               Atharv Mishra
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
@@ -102,25 +133,25 @@ export default function Home() {
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <div className="flex justify-center">
                 <AiFillFilePdf
-                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer"
+                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer cursor-pointer transition-transform transform hover:scale-110 hover:shadow-xl"
                   onClick={handleDownload}
                 />
               </div>
               <div className="flex justify-center">
                 <AiFillLinkedin
-                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer"
+                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer cursor-pointer transition-transform transform hover:scale-110 hover:shadow-xl"
                   onClick={handleRedirectLinkedIn}
                 />
               </div>
 
               <div className="flex justify-center">
                 <AiFillGithub
-                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer"
+                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer cursor-pointer transition-transform transform hover:scale-110 hover:shadow-xl"
                   onClick={handleRedirect}
                 />
               </div>
             </div>
-          
+
 
           </div>
 
@@ -133,30 +164,30 @@ export default function Home() {
             </p>
 
           </div>
-          <div className="lg:flex gap-10">
-            <div className="text-start p-10 rounded-xl my-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+          <div className="lg:flex gap-5">
+            <div className="text-start p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
               <div className="w-full lg:w-1/3 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={oraFinanceMockup2} layout="responsive" objectFit="cover" />
                 </div>
               </div>
               <div className="w-full lg:w-1/3 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={oraFinanceMockup} layout="responsive" objectFit="cover" />
                 </div>
               </div>
               <div className="w-full lg:w-1/3 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={oraFinanceMockup3} layout="responsive" objectFit="cover" />
                 </div>
               </div>
 
 
-              <div className="w-full lg:w-full p-4 shadow-lg rounded-lg bg-white dark:bg-gray-800">
+              <div className="w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
                 <h3 className="text-4xl py-2 text-gray-300 font-medium dark:text-gray-400 md:text-3xl">
                   Ora Finance App
                 </h3>
-                <p className="py-2 text-gray-800 dark:text-gray-200">
+                <p className="py-2 text-white">
                   Developed end-to-end loan application to streamline the process of KYC, e-Sign, loan repayments, loan status, customer ledger and much more with really elegant and user friendly UI design.
                 </p>
                 <div className="flex justify-center mt-6">
@@ -172,28 +203,28 @@ export default function Home() {
 
             </div>
           </div>
-          <div className="lg:flex gap-10">
-            <div className="text-start p-10 rounded-xl my-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+          <div className="lg:flex gap-5">
+            <div className="text-start p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
               <div className="w-full lg:w-1/3 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={nitr3} layout="responsive" objectFit="cover" />
                 </div>
               </div>
               <div className="w-full lg:w-1/3 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={nitr1} layout="responsive" objectFit="cover" />
                 </div>
               </div>
               <div className="w-full lg:w-1/3 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={nitr2} layout="responsive" objectFit="cover" />
                 </div>
               </div>
-              <div className="w-full lg:w-full p-4 shadow-lg rounded-lg bg-white dark:bg-gray-800">
+              <div className="w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
                 <h3 className="text-3xl text-gray-300 font-medium dark:text-gra-400 md:text-3xl">
                   Hello NITR(NIT Rourkela) App
                 </h3>
-                <p className="py-2 text-gray-800 dark:text-gray-200">
+                <p className="py-2 text-white">
                   Was finalist in NITR Hacksagon 2023 and Developed an App for students of NIT Rourkela that contains the contact informations of all the faculty members and lets you connect with
                   them.
                 </p>
@@ -210,29 +241,29 @@ export default function Home() {
 
             </div>
           </div>
-          <div className="lg:flex gap-10">
-            <div className="text-start p-10 rounded-xl my-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+          <div className="lg:flex gap-5">
+            <div className="text-start p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
               <div className="w-full lg:w-1/3 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={wallpaper_app1} layout="responsive" objectFit="cover" />
                 </div>
               </div>
 
               <div className="w-full lg:w-1/3 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={wallpaper_app2} layout="responsive" objectFit="cover" />
                 </div>
               </div>
               <div className="w-full lg:w-1/3 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800" style={{ width: '100%', position: 'relative' }}>
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={wallpaper_app3} layout="responsive" objectFit="cover" />
                 </div>
               </div>
-              <div className="w-full lg:w-full p-4 shadow-lg rounded-lg bg-white dark:bg-gray-800">
+              <div className=" w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-gray-100 dark:text-gray-200 transform transition-all duration-500 hover:scale-105">
                 <h3 className="text-4xl py-2 text-gray-300 font-medium dark:text-gray-400 md:text-4xl">
                   Wallpaper App
                 </h3>
-                <p className="py-2 text-gray-800 dark:text-gray-200">
+                <p className="py-2 text-white">
                   Developed a wallpaper app where you can browse through millions of High Quality pictures and use them as wallpaper.
                 </p>
                 <div className="flex justify-center mt-6">
@@ -250,7 +281,38 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-10">
+
+        <TechStack />
+        <footer className="text-gray-800 dark:text-gray-200 py-12 mt-20">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+              <div className="text-center md:text-left mb-4 md:mb-0">
+                <h2 className="text-gray-800 dark:text-gray-200">Atharv Mishra</h2>
+                <p className="text-gray-800 dark:text-gray-200">Android App Developer</p>
+              </div>
+              <div className="flex space-x-6">
+                <a href={handleRedirect} className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                  <AiFillGithub size={30} />
+                </a>
+                <a href={handleRedirectLinkedIn} className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                  <AiFillLinkedin size={30} />
+                </a>
+                <a href={handleDownload} className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                  <AiFillFilePdf size={30} />
+                </a>
+              </div>
+            </div>
+            <div className="text-gray-800 dark:text-gray-200 border-t border-gray-700 pt-8">
+              <div className="flex flex-col md:flex-row justify-between items-center">
+                <p className="text-gray-800 dark:text-gray-200 text-center md:text-left mb-4 md:mb-0">© 2024 Atharv Mishra. All rights reserved.</p>
+                <p className="text-gray-800 dark:text-gray-200 text-center md:text-right">Designed with <span className="text-red-500">❤</span> by Atharv</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+
+        {/* <section className="py-10">
           <div>
             <h3 className="text-3xl py-1 dark:text-white ">Portofolio</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
@@ -322,7 +384,7 @@ export default function Home() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );
