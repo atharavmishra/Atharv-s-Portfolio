@@ -54,28 +54,28 @@ export default function Home() {
 
   const TechStack = () => {
     return (
-      <div className="lg:flex-wrap w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
+      <div className="w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
         <h3 className="text-3xl py-4 font-semibold text-center">Tech Stack</h3>
-        <div className="flex justify-around items-center mt-6 space-x-6">
-          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+        <div className="flex flex-wrap justify-center items-center mt-6 space-x-6 lg:space-x-6">
+          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 m-2 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-28 h-32 md:w-32 md:h-36">
             <div className="w-16 h-16">
               <Image src={androidStudioIcon} layout="responsive" objectFit="contain" />
             </div>
             <p className="mt-2 text-gray-900 dark:text-gray-200 font-semibold">Android Studio</p>
           </div>
-          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-32 h-32">
-            <div className="w-16 h-16 mt-3">
+          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 m-2 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-28 h-32 md:w-32 md:h-36">
+            <div className="w-16 h-16">
               <Image src={kotlinIcon} layout="responsive" objectFit="contain" />
             </div>
             <p className="mt-3 text-gray-900 dark:text-gray-200 font-semibold">Kotlin</p>
           </div>
-          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-32 h-32">
-            <div className="w-14 h-14 justify-center">
+          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 m-2 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-28 h-32 md:w-32 md:h-36">
+            <div className="w-14 h-14">
               <Image src={javaIcon} layout="responsive" objectFit="contain" />
             </div>
-            <p className="mt-8   text-gray-900 dark:text-gray-200 font-semibold">Java</p>
+            <p className="mt-3 text-gray-900 dark:text-gray-200 font-semibold mt-9">Java</p>
           </div>
-          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-32 h-32">
+          <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 m-2 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-28 h-32 md:w-32 md:h-36">
             <div className="w-16 h-16 mt-3">
               <Image src={firebaseIcon} layout="responsive" objectFit="contain" />
             </div>
@@ -85,6 +85,7 @@ export default function Home() {
       </div>
     );
   }
+
 
   return (
     <div className={`${darkMode ? "dark" : ""} w-full h-full`}>
@@ -106,12 +107,12 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+                  className="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-teal-800 dark:via-teal-1000 dark:to-cyan-800 text-white px-4 py-2 border-none rounded-md ml-8"
                   href="#"
                   onClick={handleRedirect}
                 >
                   Github
-                </a>
+                </a>  
               </li>
             </ul>
           </nav>
@@ -292,13 +293,23 @@ export default function Home() {
               </div>
               <div className="flex space-x-6">
                 <a href={handleRedirect} className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
-                  <AiFillGithub size={30} />
+                  <AiFillGithub
+                    className="cursor-pointer cursor-pointer"
+                    onClick={handleRedirect}
+                    size={30} />
                 </a>
                 <a href={handleRedirectLinkedIn} className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
-                  <AiFillLinkedin size={30} />
+                  <AiFillLinkedin
+                    className="cursor-pointer cursor-pointer"
+                    onClick={handleRedirectLinkedIn}
+                    size={30} />
                 </a>
-                <a href={handleDownload} className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
-                  <AiFillFilePdf size={30} />
+                <a className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                  <AiFillFilePdf
+                    className="cursor-pointer cursor-pointer"
+                    onClick={handleDownload}
+                    size={30}
+                  />
                 </a>
               </div>
             </div>
