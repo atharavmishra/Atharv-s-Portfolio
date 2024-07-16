@@ -21,6 +21,7 @@ import androidStudioIcon from "../public/android_studio_icon.png";
 import firebaseIcon from "../public/firebase.png";
 import javaIcon from "../public/java.png";
 import kotlinIcon from "../public/kotlin_logo.png";
+import instagramIcon from "../public/instagram.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -39,6 +40,10 @@ export default function Home() {
 
   const handleRedirectWallpaperApp = () => {
     window.open('https://play.google.com/store/apps/details?id=com.dktlabs.wallpapers&pcampaignid=web_share', '_blank');
+  };
+
+  const handleRedirectUnnatiWeb = () => {
+    window.open('https://unnati.ag/', '_blank');
   };
 
   const handleDownload = () => {
@@ -130,7 +135,7 @@ export default function Home() {
               Android App developer.
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              Hey there! I'm an Android developer with 2.5 years of experience of crafting awesome mobile applications. With a passion for turning ideas into stunning apps, I specialize in creating magic on small screens. From sleek designs to seamless functionality, I bring apps to life with my skills. Let's build something amazing together! 🚀  </p>
+              Hey there! I'm an Android developer with 3 years of experience of crafting awesome mobile applications. With a passion for turning ideas into stunning apps, I create magic on small screens and bring apps to life with my skills. Apart from virtual world I love working out, singing and making memes I own and manage an Instagram page where I post memes about programming.</p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <div className="flex justify-center">
                 <AiFillFilePdf
@@ -147,9 +152,36 @@ export default function Home() {
 
               <div className="flex justify-center">
                 <AiFillGithub
-                  className="text-5xl text-gray-600 dark:text-gray-400 cursor-pointer cursor-pointer transition-transform transform hover:scale-110 hover:shadow-xl"
+                  className=" cursor-pointer cursor-pointer transition-transform transform hover:scale-110 hover:shadow-xl"
                   onClick={handleRedirect}
                 />
+              </div>
+            </div>
+            <div className="w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
+              <h3 className="text-3xl py-4 font-semibold text-center">What I'm Doing Now</h3>
+              <div className="flex flex-col space-y-4">
+                <div className="flex items-center space-x-4">
+                  <span className="text-2xl">🏠</span>
+                  <p>Living in <span className="font-semibold">Noida</span></p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-2xl">💼</span>
+                  <p>Working for <a className="text-cyan-300 hover:underline cursor-pointer" onClick={handleRedirectUnnatiWeb}
+                  >Unnati Agritech</a>
+
+                  </p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-2xl">⏰</span>
+                  <p>Developing <a className="text-purple-300">a social service app using JetPack Compose</a></p>
+                </div>
+                {/* <div className="flex items-center space-x-4">
+                  <div style={{ width: '28px', height: '28px', position: 'relative' }}>
+                    <Image src={instagramIcon} layout="responsive" objectFit="contain" />
+                  </div>
+                  <p>Get my favourites <a href="#" className="text-green-300 hover:underline">here</a></p>
+                </div> */}
+
               </div>
             </div>
 
