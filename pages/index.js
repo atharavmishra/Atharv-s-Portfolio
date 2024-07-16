@@ -230,13 +230,13 @@ export default function Home() {
                   them.
                 </p>
                 <div className="flex justify-center mt-6">
-                  <a
+                  {/* <a
                     className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md"
                     href="#"
                     onClick={handleRedirect2}
                   >
                     Live App
-                  </a>
+                  </a> */}
                 </div>
               </div>
 
