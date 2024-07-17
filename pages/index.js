@@ -248,7 +248,7 @@ export default function Home() {
                   <Image src={nitr1} layout="responsive" objectFit="cover" />
                 </div>
               </div>
-              <div className="w-full lg:w-1/3 p-2 md:mt-10">
+              <div className="w-full lg:w-1/3 p-2">
                 <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={nitr2} layout="responsive" objectFit="cover" />
                 </div>
