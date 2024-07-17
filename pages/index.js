@@ -6,7 +6,7 @@ import {
 } from "react-icons/ai";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
-import deved from "../public/dev-ed-wave.png";
+import deved from "../public/dev-ed-wave_.webp";
 import oraFinanceMockup from "../public/ora_finance_mockup.png";
 import oraFinanceMockup2 from "../public/ora_finance_mockup_2.png";
 import oraFinanceMockup3 from "../public/ora_finance_mockup3.png";
