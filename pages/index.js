@@ -61,7 +61,7 @@ export default function Home() {
     return (
       <div className="w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
         <h3 className="text-3xl py-4 font-semibold text-center">Tech Stack</h3>
-        <div className="flex flex-wrap justify-center items-center mt-6 space-x-6 lg:space-x-6">
+        <div className="flex flex-wrap justify-center items-center mt-6 lg:space-x-6">
           <div className="flex flex-col items-center bg-white dark:bg-gray-700 p-4 m-2 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl w-28 h-32 md:w-32 md:h-36">
             <div className="w-16 h-16">
               <Image src={androidStudioIcon} layout="responsive" objectFit="contain" />
@@ -127,7 +127,7 @@ export default function Home() {
               <Image src={deved} layout="responsive" objectFit="cover" />
             </div>
           </div>
-          <div className="text-center p-10 py-10">
+          <div className="text-center md:p-10 md:py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black bg-clip-text text-transparent">
               Atharv Mishra
             </h2>
@@ -190,7 +190,7 @@ export default function Home() {
 
         </section>
         <section>
-          <div>
+          <div className="mt-3">
             <h3 className="text-3xl py-1 dark:text-white ">My Projects</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               I've been developing Android apps for over 4 years now, and I really enjoy creating mobile applications that users love to interact with. I'm skilled in languages like Java and Kotlin, and I use tools like Android Studio to bring ideas to life. From designing how apps look and feel to connecting them with online services, I focus on making sure everything works smoothly. I'm always learning new ways to improve user experiences and make apps more reliable and efficient.
@@ -198,7 +198,7 @@ export default function Home() {
 
           </div>
           <div className="lg:flex gap-5">
-            <div className="text-start p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+            <div className="text-start md:p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
               <div className="w-full lg:w-1/3 p-2">
                 <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={oraFinanceMockup2} layout="responsive" objectFit="cover" />
@@ -237,7 +237,7 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:flex gap-5">
-            <div className="text-start p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+            <div className="text-start md:p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
               <div className="w-full lg:w-1/3 p-2">
                 <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={nitr3} layout="responsive" objectFit="cover" />
@@ -275,7 +275,7 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:flex gap-5">
-            <div className="text-start p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+            <div className="text-start md:p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
               <div className="w-full lg:w-1/3 p-2">
                 <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
                   <Image src={wallpaper_app1} layout="responsive" objectFit="cover" />
