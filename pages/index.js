@@ -134,7 +134,7 @@ export default function Home() {
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
               Android App developer.
             </h3>
-            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
+            <p className="text-md  leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl text-justify">
               Hey there! I'm an Android developer with 3 years of experience of crafting awesome mobile applications. With a passion for turning ideas into stunning apps, I create magic on small screens and bring apps to life with my skills. Apart from virtual world I love working out, singing and making memes I own and manage an Instagram page where I post memes about programming.</p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <div className="flex justify-center">
@@ -157,8 +157,8 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
-              <h3 className="text-3xl py-4 font-semibold text-center">What I'm Doing Now</h3>
+            <div className="w-full p-6 mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
+              <h3 className="text-3xl py-4 font-semibold text-center">Currently</h3>
               <div className="flex flex-col space-y-4">
                 <div className="flex items-center space-x-4">
                   <span className="text-2xl">🏠</span>
