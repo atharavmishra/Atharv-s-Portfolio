@@ -16,6 +16,9 @@ import nitr3 from "../public/nitr3.png";
 import wallpaper_app1 from "../public/wallpaper_app1.png";
 import wallpaper_app2 from "../public/wallpaper2.png";
 import wallpaper_app3 from "../public/wallpaper3.png";
+import ustore1 from "../public/ustore_1.png";
+import ustore2 from "../public/ustore_2.png";
+import ustore3 from "../public/ustore_3.png";
 import Image from "next/image";
 import androidStudioIcon from "../public/android_studio_icon.png";
 import firebaseIcon from "../public/firebase.png";
@@ -36,6 +39,10 @@ export default function Home() {
 
   const handleRedirect2 = () => {
     //window.open('https://github.com/atharavmishra', '_blank');
+  };
+
+  const handleRedirectUstore = () => {
+    window.open('https://play.google.com/store/apps/details?id=com.unnatiagro.agripos&pcampaignid=web_share', '_blank');
   };
 
   const handleRedirectWallpaperApp = () => {
@@ -221,7 +228,7 @@ export default function Home() {
                   Ora Finance App
                 </h3>
                 <p className="py-2 text-white">
-                  Developed end-to-end loan application to streamline the process of KYC, e-Sign, loan repayments, loan status, customer ledger and much more with really elegant and user friendly UI design.
+                  Developed end-to-end loan application by following best practices with almost no code warnings.The app streamlines the process of KYC, e-Sign, loan repayments, loan status, customer ledger and much more with really elegant and user friendly UI design.
                 </p>
                 <div className="flex justify-center mt-6">
                   <a
@@ -269,6 +276,43 @@ export default function Home() {
                   >
                     Live App
                   </a> */}
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div className="lg:flex gap-5">
+            <div className="text-start md:p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
+                  <Image src={ustore1} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
+                  <Image src={ustore2} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+              <div className="w-full lg:w-1/3 p-2">
+                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
+                  <Image src={ustore3} layout="responsive" objectFit="cover" />
+                </div>
+              </div>
+              <div className="w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
+                <h3 className="text-3xl text-gray-300 font-medium dark:text-gra-400 md:text-3xl">
+                  U-Store App
+                </h3>
+                <p className="py-2 text-white">
+                 U-Store is an e-commerce app with over 100K+ Downloads. Developed multiple modules inside the app, implemented secure payment gateway, migrated the entire code from java to Kotlin and revamped the UI.
+                </p>
+                <div className="flex justify-center mt-6">
+                  <a
+                    className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md"
+                    href="#"
+                    onClick={handleRedirectUstore}
+                  >
+                    Live App
+                  </a>
                 </div>
               </div>
 
