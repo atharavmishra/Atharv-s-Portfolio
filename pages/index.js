@@ -265,8 +265,7 @@ export default function Home() {
                   Hello NITR(NIT Rourkela) App
                 </h3>
                 <p className="py-2 text-white">
-                  Was finalist in NITR Hacksagon 2023 and Developed an App for students of NIT Rourkela that contains the contact informations of all the faculty members and lets you connect with
-                  them.
+                Built an app for NIT Rourkela  that bridges the communication gap between faculty and students.
                 </p>
                 <div className="flex justify-center mt-6">
                   {/* <a
