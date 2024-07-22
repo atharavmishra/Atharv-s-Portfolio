@@ -265,7 +265,7 @@ export default function Home() {
                   Hello NITR(NIT Rourkela) App
                 </h3>
                 <p className="py-2 text-white">
-                Built an app for NIT Rourkela  that bridges the communication gap between faculty and students.
+                  Built an app for NIT Rourkela  that bridges the communication gap between faculty and students.
                 </p>
                 <div className="flex justify-center mt-6">
                   {/* <a
@@ -302,7 +302,7 @@ export default function Home() {
                   U-Store App
                 </h3>
                 <p className="py-2 text-white">
-                 U-Store is an e-commerce app with over 100K+ Downloads. Developed multiple modules inside the app, implemented secure payment gateway, migrated the entire code from java to Kotlin and revamped the UI.
+                  U-Store is an e-commerce app with over 100K+ Downloads. Developed multiple modules inside the app, implemented secure payment gateway, migrated the entire code from java to Kotlin and revamped the UI.
                 </p>
                 <div className="flex justify-center mt-6">
                   <a
@@ -365,23 +365,28 @@ export default function Home() {
               <div className="text-center md:text-left mb-4 md:mb-0">
                 <h2 className="text-gray-800 dark:text-gray-200">Atharv Mishra</h2>
                 <p className="text-gray-800 dark:text-gray-200">Android App Developer</p>
+                <p className="text-gray-800 dark:text-gray-200">
+                  Email:
+                  <a href="mailto:atharvmishra77@gmail.com" className="hover:text-gray-400 transition-colors duration-300 underline text-blue-500">atharvmishra77@gmail.com</a>
+                </p>
+                <p className="text-gray-800 dark:text-gray-200">Mobile: +91-8755328239</p>
               </div>
               <div className="flex space-x-6">
                 <a href={handleRedirect} className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
                   <AiFillGithub
-                    className="cursor-pointer cursor-pointer"
+                    className="cursor-pointer"
                     onClick={handleRedirect}
                     size={30} />
                 </a>
                 <a href={handleRedirectLinkedIn} className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
                   <AiFillLinkedin
-                    className="cursor-pointer cursor-pointer"
+                    className="cursor-pointer"
                     onClick={handleRedirectLinkedIn}
                     size={30} />
                 </a>
                 <a className="hover:text-gray-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
                   <AiFillFilePdf
-                    className="cursor-pointer cursor-pointer"
+                    className="cursor-pointer"
                     onClick={handleDownload}
                     size={30}
                   />
@@ -396,6 +401,9 @@ export default function Home() {
             </div>
           </div>
         </footer>
+
+
+
 
 
         {/* <section className="py-10">
