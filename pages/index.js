@@ -59,11 +59,14 @@ export default function Home() {
     link.download = 'AtharvResume.pdf';
     link.click();
   };
-
+  
   const handleRedirectLinkedIn = () => {
     window.open('https://www.linkedin.com/in/atharv-mishra-1149821a9', '_blank');
   };
 
+  const handleRedirectInstagram = () => {
+    window.open('https://www.instagram.com/andro._world/', '_blank');
+  };
   const TechStack = () => {
     return (
       <div className="w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white transform transition-all duration-500 hover:scale-105">
@@ -182,12 +185,12 @@ export default function Home() {
                   <span className="text-2xl">⏰</span>
                   <p>Developing <a className="text-purple-300">a social service app using JetPack Compose</a></p>
                 </div>
-                {/* <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4">
                   <div style={{ width: '28px', height: '28px', position: 'relative' }}>
                     <Image src={instagramIcon} layout="responsive" objectFit="contain" />
                   </div>
-                  <p>Get my favourites <a href="#" className="text-green-300 hover:underline">here</a></p>
-                </div> */}
+                  <p>My <a href="#" className="text-green-300 hover:underline" onClick={handleRedirectInstagram} >page</a></p>
+                </div>
 
               </div>
             </div>
