@@ -59,7 +59,7 @@ export default function Home() {
     link.download = 'AtharvResume.pdf';
     link.click();
   };
-  
+
   const handleRedirectLinkedIn = () => {
     window.open('https://www.linkedin.com/in/atharv-mishra-1149821a9', '_blank');
   };
@@ -194,10 +194,7 @@ export default function Home() {
 
               </div>
             </div>
-
-
           </div>
-
         </section>
         <section>
           <div className="mt-3">
