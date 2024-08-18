@@ -37,8 +37,8 @@ export default function Home() {
     window.open('https://play.google.com/store/apps/details?id=com.app.orafinancecustomer&pcampaignid=web_share', '_blank');
   };
 
-  const handleRedirect2 = () => {
-    //window.open('https://github.com/atharavmishra', '_blank');
+  const handleRedirectNitr = () => {
+    window.open('https://play.google.com/store/apps/details?id=com.nitrkl.hellonitr&pcampaignid=web_share', '_blank');
   };
 
   const handleRedirectUstore = () => {
@@ -268,13 +268,13 @@ export default function Home() {
                   Built an app for NIT Rourkela  that bridges the communication gap between faculty and students.
                 </p>
                 <div className="flex justify-center mt-6">
-                  {/* <a
+                  <a
                     className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md"
                     href="#"
-                    onClick={handleRedirect2}
+                    onClick={handleRedirectNitr}
                   >
                     Live App
-                  </a> */}
+                  </a>
                 </div>
               </div>
 
