@@ -54,6 +54,10 @@ export default function Home() {
     window.open('https://play.google.com/store/apps/details?id=com.dktlabs.wallpapers&pcampaignid=web_share', '_blank');
   };
 
+  const handleRedirectNoNames = () => {
+    window.open('https://play.google.com/store/apps/details?id=com.nonamessocialmedia&pcampaignid=web_share', '_blank');
+  };
+
   const handleRedirectUnnatiWeb = () => {
     window.open('https://queuebuster.co/', '_blank');
   };
@@ -159,10 +163,10 @@ return (
               Atharv Mishra
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-              Android App developer.
+              Mobile App developer (Android and Flutter).
             </h3>
             <p className="text-md  leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl text-justify">
-              Hey there! I'm an Android developer with 3 years of experience of crafting awesome mobile applications. With a passion for turning ideas into stunning apps, I create magic on small screens and bring apps to life with my skills. Apart from virtual world I love working out, singing and making memes I own and manage an Instagram page where I post memes about programming.</p>
+              Hey there! I'm a Mobile App developer with 3 years of experience of crafting awesome mobile applications. With a passion for turning ideas into stunning apps, I create magic on small screens and bring apps to life with my skills. Apart from virtual world I love working out, singing and making memes I own and manage an Instagram page where I post memes about programming.</p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <div className="flex justify-center">
                 <AiFillFilePdf
@@ -403,7 +407,7 @@ return (
                   <a
                     className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md"
                     href="#"
-                    onClick={handleRedirectWallpaperApp}
+                    onClick={handleRedirectNoNames}
                   >
                     Live App
                   </a>
