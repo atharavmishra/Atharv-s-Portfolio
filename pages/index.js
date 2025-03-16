@@ -204,7 +204,7 @@ return (
                 </div>
                 <div className="flex items-center space-x-4">
                   <span className="text-2xl">⏰</span>
-                  <p>Developing <a className="text-purple-300">a social service app using JetPack Compose</a></p>
+                  <p>Developing <a className="text-purple-300">a calorie tracker app powered by AI</a></p>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div style={{ width: '28px', height: '28px', position: 'relative' }}>
