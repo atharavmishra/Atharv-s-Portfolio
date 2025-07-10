@@ -20,6 +20,8 @@ import nnpic1 from "../public/nnpic5.webp";
 import nnpic2 from "../public/nnpic1.webp";
 import nnpic3 from "../public/nnpic4.webp";
 import selfCheckout from "../public/self_checkout.png";
+import selfCheckout2 from "../public/self_checkout_2.png";
+import selfCheckout3 from "../public/self_checkout_3.png";
 
 import qq_1 from "../public/qq_1.png";
 import qq_2 from "../public/qq_2.png";
@@ -437,12 +439,12 @@ export default function Home() {
 
               <div className="w-full lg:w-1/3 p-2">
                 <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
-                  <Image src={selfCheckout} layout="responsive" objectFit="cover" />
+                  <Image src={selfCheckout2} layout="responsive" objectFit="cover" />
                 </div>
               </div>
               <div className="w-full lg:w-1/3 p-2">
                 <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
-                  <Image src={selfCheckout} layout="responsive" objectFit="cover" />
+                  <Image src={selfCheckout3} layout="responsive" objectFit="cover" />
                 </div>
               </div>
               <div className=" w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-gray-100 dark:text-gray-200 transform transition-all duration-500 hover:scale-105">
