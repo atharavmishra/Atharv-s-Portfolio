@@ -85,15 +85,6 @@ const ProjectShowcase = ({ title, desc, images, link, linkText = "View Live" }) 
 );
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    // Hide default scrollbar on project scroll views using standard CSS in useEffect or via globals, but easier inline above
-  }, []);
-
-  if (!mounted) return null;
-
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-white/30 overflow-x-hidden">
       <Head>
