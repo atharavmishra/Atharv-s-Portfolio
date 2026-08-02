@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { AiFillLinkedin, AiFillGithub, AiFillFilePdf } from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 // Images
 import deved from "../public/dev-ed-wave.png";
