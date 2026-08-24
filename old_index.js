@@ -23,13 +23,6 @@ import selfCheckout from "../public/self_checkout.png";
 import selfCheckout2 from "../public/self_checkout_2.png";
 import selfCheckout3 from "../public/self_checkout_3.png";
 
-import starmap1 from "../public/starmap1.png";
-import starmap2 from "../public/starmap2.png";
-import slot1 from "../public/slot1.png";
-import slot2 from "../public/slot2.png";
-import slot3 from "../public/slot3.png";
-import slot4 from "../public/slot4.png";
-
 import qq_1 from "../public/qq_1.png";
 import qq_2 from "../public/qq_2.png";
 import qq_3 from "../public/qq_3.png";
@@ -472,62 +465,6 @@ export default function Home() {
               </div>
 
 
-            </div>
-          </div>
-
-          <div className="lg:flex gap-5">
-            <div className="text-start md:p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
-              <div className="w-full lg:w-1/2 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
-                  <Image src={starmap1} layout="responsive" objectFit="cover" />
-                </div>
-              </div>
-              <div className="w-full lg:w-1/2 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
-                  <Image src={starmap2} layout="responsive" objectFit="cover" />
-                </div>
-              </div>
-              <div className=" w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-gray-100 dark:text-gray-200 transform transition-all duration-500 hover:scale-105">
-                <h3 className="text-4xl py-2 text-gray-300 font-medium dark:text-gray-400 md:text-4xl">
-                  AR Star Map
-                </h3>
-                <p className="py-2 text-white">
-                  An immersive AR stargazing application that turns your device into a window to the cosmos. Identify planets like Jupiter, Mars, and Venus, and deep sky objects like the Orion Nebula in real-time.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:flex gap-5">
-            <div className="text-start md:p-10 rounded-xl mt-10 flex-1 flex flex-wrap" style={{ height: 'auto' }}>
-              <div className="w-full lg:w-1/4 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
-                  <Image src={slot1} layout="responsive" objectFit="cover" />
-                </div>
-              </div>
-              <div className="w-full lg:w-1/4 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
-                  <Image src={slot2} layout="responsive" objectFit="cover" />
-                </div>
-              </div>
-              <div className="w-full lg:w-1/4 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
-                  <Image src={slot3} layout="responsive" objectFit="cover" />
-                </div>
-              </div>
-              <div className="w-full lg:w-1/4 p-2">
-                <div className="shadow-2xl rounded-lg overflow-hidden bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-xl" style={{ width: '100%', position: 'relative' }}>
-                  <Image src={slot4} layout="responsive" objectFit="cover" />
-                </div>
-              </div>
-              <div className=" w-full p-6 mx-auto mt-10 shadow-2xl rounded-xl overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 dark:from-gray-800 dark:via-gray-900 dark:to-black text-gray-100 dark:text-gray-200 transform transition-all duration-500 hover:scale-105">
-                <h3 className="text-4xl py-2 text-gray-300 font-medium dark:text-gray-400 md:text-4xl">
-                  QueueBuster Slot Booking Kiosk
-                </h3>
-                <p className="py-2 text-white">
-                  A sleek Flutter-based kiosk application for amusement parks. It allows guests to browse attractions, select time slots, and specify party size. Features a highly responsive UI, live backend integration for slot availability, and instant QR-code thermal ticket printing for frictionless ride admission.
-                </p>
-              </div>
             </div>
           </div>
 
