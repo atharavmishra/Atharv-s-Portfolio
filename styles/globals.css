@@ -2,12 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------------------------------------------------------
+   Design tokens — Apple-flavoured light / dark palettes
+   ------------------------------------------------------------------ */
+:root {
+  --bg: #fbfbfd;
+  --bg-elevated: #ffffff;
+  --bg-sunken: #f5f5f7;
+  --text: #1d1d1f;
+  --text-dim: #6e6e73;
+  --hairline: rgba(0, 0, 0, 0.09);
+  --accent: #0071e3;
+  --accent-soft: rgba(0, 113, 227, 0.12);
+  --nav-bg: rgba(251, 251, 253, 0.72);
+  --card-glow: rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 24px 68px rgba(0, 0, 0, 0.12);
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-soft: cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.dark {
+  --bg: #000000;
+  --bg-elevated: #1d1d1f;
+  --bg-sunken: #101012;
+  --text: #f5f5f7;
+  --text-dim: #86868b;
+  --hairline: rgba(255, 255, 255, 0.12);
+  --accent: #2997ff;
+  --accent-soft: rgba(41, 151, 255, 0.16);
+  --nav-bg: rgba(10, 10, 12, 0.72);
+  --card-glow: rgba(255, 255, 255, 0.08);
+  --shadow-lg: 0 24px 68px rgba(0, 0, 0, 0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* The page colour lives on <html> only. If <body> also carried an opaque
+   background it would paint over any negative z-index layer (the hero's
+   ambient orbs), because block descendants paint after them. */
+html {
+  background: var(--bg);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.6s var(--ease-soft), color 0.6s var(--ease-soft);
 }
 
 a {
@@ -18,7 +67,438 @@ a {
 * {
   box-sizing: border-box;
 }
-@font-face {
-  font-family: "burtons";
-  src: url("../public/Burtons.otf");
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ------------------------------------------------------------------
+   Typography — Apple's tight, optically-corrected headline stack
+   ------------------------------------------------------------------ */
+.headline {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--accent);
+}
+
+.body-copy {
+  color: var(--text-dim);
+  line-height: 1.55;
+  letter-spacing: -0.012em;
+}
+
+.text-gradient {
+  /* Deeper stops for light mode — the dark-mode brights (#ff9f0a, #30d158)
+     fall below readable contrast against a near-white background. */
+  background-image: linear-gradient(
+    92deg,
+    #a93bd6 0%,
+    #e0244c 28%,
+    #b96a00 54%,
+    #17913c 76%,
+    #0062cc 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hue-drift 9s linear infinite alternate;
+}
+
+.dark .text-gradient {
+  background-image: linear-gradient(
+    92deg,
+    #bf5af2 0%,
+    #ff375f 28%,
+    #ff9f0a 54%,
+    #30d158 76%,
+    #0a84ff 100%
+  );
+}
+
+@keyframes hue-drift {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+/* ------------------------------------------------------------------
+   Progressive-enhancement reveals.
+   Elements are only hidden once JS has confirmed it is running
+   (`.js-anim` is set on <html>), so a JS failure can never blank the page.
+   ------------------------------------------------------------------ */
+.js-anim .reveal {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition: opacity 0.9s var(--ease-soft), transform 0.9s var(--ease-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js-anim .reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 1s var(--ease-soft), transform 1s var(--ease-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js-anim .reveal-blur {
+  opacity: 0;
+  filter: blur(14px);
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 1s var(--ease-soft), transform 1s var(--ease-soft),
+    filter 1s var(--ease-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js-anim .reveal.is-in,
+.js-anim .reveal-scale.is-in,
+.js-anim .reveal-blur.is-in {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+
+/* ------------------------------------------------------------------
+   Glass chrome
+   ------------------------------------------------------------------ */
+.glass {
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.hairline-b {
+  border-bottom: 1px solid var(--hairline);
+}
+
+/* Apple's pill call-to-action */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 0.7rem 1.35rem;
+  border-radius: 980px;
+  transition: transform 0.35s var(--ease), filter 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+}
+
+.pill:hover {
+  transform: translateY(-2px) scale(1.03);
+  filter: brightness(1.08);
+  box-shadow: 0 12px 28px var(--accent-soft);
+}
+
+.pill-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.pill-ghost:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Apple's chevron link */
+.chev-link {
+  color: var(--accent);
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.chev-link .chev {
+  transition: transform 0.3s var(--ease);
+}
+
+.chev-link:hover .chev {
+  transform: translateX(4px);
+}
+
+/* ------------------------------------------------------------------
+   Cards — cursor-tracked spotlight
+   ------------------------------------------------------------------ */
+.card {
+  position: relative;
+  background: var(--bg-elevated);
+  border-radius: 28px;
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+  transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+  background: radial-gradient(
+    340px circle at var(--mx, 50%) var(--my, 50%),
+    var(--card-glow),
+    transparent 65%
+  );
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ------------------------------------------------------------------
+   Ambient colour fields that drift behind the hero
+   ------------------------------------------------------------------ */
+/* The softness comes from the gradient's own stops. A `filter: blur()` on a
+   surface this large is redundant, costs a full-screen GPU pass, and is what
+   makes weak hardware drop the whole layer. */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  /* Kept deliberately faint on the light background, where saturated colour
+     reads as a blob rather than as ambient light. */
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.dark .orb {
+  opacity: 0.45;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(30px, -40px, 0) scale(1.12); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.05); }
+  50%      { transform: translate3d(-40px, 30px, 0) scale(0.94); }
+}
+
+.orb-a { animation: float-a 16s ease-in-out infinite; }
+.orb-b { animation: float-b 21s ease-in-out infinite; }
+
+/* ------------------------------------------------------------------
+   Hero headline — line-by-line mask reveal
+   ------------------------------------------------------------------ */
+.mask-line {
+  display: block;
+  overflow: hidden;
+  /* The tight 0.95 leading puts descenders below the line box; extend the clip
+     region without changing layout so "Apps people keep." keeps its p's. */
+  padding-bottom: 0.09em;
+  margin-bottom: -0.09em;
+}
+
+.mask-line > span {
+  display: block;
+}
+
+.js-anim .mask-line > span {
+  transform: translate3d(0, 105%, 0);
+  transition: transform 1.15s var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js-anim .mask-line.is-in > span {
+  transform: none;
+}
+
+/* Scroll cue */
+@keyframes cue {
+  0%   { transform: translateY(0); opacity: 0; }
+  35%  { opacity: 1; }
+  100% { transform: translateY(11px); opacity: 0; }
+}
+
+.cue-dot {
+  animation: cue 2s var(--ease-soft) infinite;
+}
+
+/* ------------------------------------------------------------------
+   Horizontal snap gallery (Apple's product card rail)
+   ------------------------------------------------------------------ */
+.rail {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.rail > * {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+}
+
+/* ------------------------------------------------------------------
+   Device frame for app screenshots
+   ------------------------------------------------------------------ */
+.device {
+  position: relative;
+  border-radius: 34px;
+  padding: 7px;
+  background: linear-gradient(160deg, #3a3a3c 0%, #1c1c1e 44%, #48484a 100%);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28), 0 2px 5px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  transition: transform 0.7s var(--ease), box-shadow 0.7s var(--ease);
+}
+
+.device:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 36px 84px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.device-screen {
+  border-radius: 27px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+  line-height: 0;
+}
+
+/* Assets that already contain their own bezel get no CSS frame — a second one
+   only opens a hollow gap around the phone. Rounding is invisible on the
+   transparent-padded exports and tidies the opaque store artwork. */
+.shot {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  line-height: 0;
+  transition: transform 0.7s var(--ease);
+}
+
+.shot:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* ------------------------------------------------------------------
+   Marquee ticker
+   ------------------------------------------------------------------ */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+.marquee-track:hover .marquee {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.fade-x {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+}
+
+/* ------------------------------------------------------------------
+   Sticky section headers for the project showcase
+   ------------------------------------------------------------------ */
+/* Only once the copy and the screens sit in parallel columns. Below that the
+   grid is a single column, and Chrome clamps a sticky grid item to the grid
+   container's content box rather than its own row — so the text would slide
+   down over the screenshots below it. */
+@media (min-width: 1024px) {
+  .sticky-col {
+    position: sticky;
+    top: 116px;
+  }
+}
+
+/* Scroll progress bar */
+.progress {
+  transform-origin: 0 50%;
+  transform: scaleX(var(--p, 0));
+  transition: transform 0.12s linear;
+}
+
+/* ------------------------------------------------------------------
+   Accessibility — honour reduced-motion by disabling all of the above
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .js-anim .reveal,
+  .js-anim .reveal-scale,
+  .js-anim .reveal-blur,
+  .js-anim .mask-line > span {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .orb-a, .orb-b, .marquee, .cue-dot, .text-gradient {
+    animation: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Hero avatar — slowly rotating conic ring
+   ------------------------------------------------------------------ */
+.avatar-ring {
+  position: relative;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(
+    from 0deg,
+    #bf5af2,
+    #ff375f,
+    #ff9f0a,
+    #30d158,
+    #0a84ff,
+    #bf5af2
+  );
+  animation: spin-ring 9s linear infinite;
+}
+
+.avatar-ring > * {
+  animation: spin-ring 9s linear infinite reverse;
+}
+
+@keyframes spin-ring {
+  to { transform: rotate(360deg); }
+}
+
+.avatar-inner {
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-sunken);
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-ring,
+  .avatar-ring > * {
+    animation: none !important;
+  }
 }

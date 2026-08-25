@@ -8,8 +8,19 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        burtons: "burtons",
-        poppins: ["Poppins", "sans-serif"],
+        // Matches the stack applied in globals.css: San Francisco where it
+        // exists, Inter everywhere else.
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "SF Pro Display",
+          "SF Pro Text",
+          "Inter",
+          "Helvetica Neue",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
       },
     },
   },
