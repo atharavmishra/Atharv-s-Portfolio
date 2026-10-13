@@ -31,6 +31,11 @@ import slot1 from "../public/slot1.png";
 import slot2 from "../public/slot2.png";
 import slot3 from "../public/slot3.png";
 import slot4 from "../public/slot4.png";
+import kiosk1 from "../public/kiosk_1.png";
+import kiosk2 from "../public/kiosk_2.png";
+import kiosk3 from "../public/kiosk_3.png";
+import kiosk4 from "../public/kiosk_4.png";
+import kiosk5 from "../public/kiosk_5.png";
 
 const openExternal = (url) => () => window.open(url, "_blank", "noopener,noreferrer");
 
@@ -120,6 +125,16 @@ export default function Home() {
         "A kiosk app for amusement parks where guests browse attractions, pick a time slot and set party size. Live backend integration keeps availability honest, and QR thermal tickets print instantly for frictionless ride admission.",
       tags: ["Flutter", "Live availability", "Thermal printing"],
       shots: [slot1, slot2, slot3, slot4],
+    },
+    {
+      eyebrow: "Kiosk · Flutter",
+      title: "Self-Ordering Kiosk",
+      description:
+        "A white-label food-ordering kiosk for QueueBuster merchants. Guests pick dine-in or takeaway, build combos, customise sizes and add-ons, and pay by card or UPI — and the order lands on the POS and kitchen display. One 1080 × 1920 design scales to whatever screen the kiosk ships with.",
+      tags: ["Flutter", "Bloc", "Combo builder", "Card & UPI", "White-label"],
+      // Menu, combo builder, then the customise flow and the order review.
+      shots: [kiosk1, kiosk2, kiosk4, kiosk5, kiosk3],
+      layout: "kiosk",
     },
   ];
 

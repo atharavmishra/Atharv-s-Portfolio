@@ -382,6 +382,31 @@ a {
   line-height: 0;
 }
 
+/* Kiosk panel: a thin bezel with square shoulders, so a kiosk screen does not
+   read as a phone. */
+.kiosk-frame {
+  position: relative;
+  border-radius: 18px;
+  padding: 6px;
+  background: linear-gradient(160deg, #3a3a3c 0%, #1c1c1e 44%, #48484a 100%);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.34), 0 2px 5px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  transition: transform 0.7s var(--ease), box-shadow 0.7s var(--ease);
+}
+
+.kiosk-frame:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 38px 90px rgba(0, 0, 0, 0.42), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.kiosk-screen {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  line-height: 0;
+}
+
 /* Assets that already contain their own bezel get no CSS frame — a second one
    only opens a hollow gap around the phone. Rounding is invisible on the
    transparent-padded exports and tidies the opaque store artwork. */

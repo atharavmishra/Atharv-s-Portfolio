@@ -33,6 +33,79 @@ function Shot({ src, alt, preFramed, className = "", style }) {
   );
 }
 
+/**
+ * A kiosk screenshot in a slim, square-shouldered bezel — a kiosk panel, not a
+ * phone.
+ */
+function KioskShot({ src, alt, className = "", style }) {
+  return (
+    <div className={`kiosk-frame ${className}`} style={style}>
+      <div className="kiosk-screen">
+        <Image src={src} alt={alt} layout="responsive" />
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Kiosk projects get two large, overlapping screens instead of the phone grid.
+ * A kiosk UI is drawn for a 1080 × 1920 panel; split three ways into phone
+ * frames it shrinks to an unreadable thumbnail, so the lead screen takes most
+ * of the column and a second one overlaps its corner; any further screens run
+ * as a smaller strip underneath. Small screens keep the swipeable rail, with
+ * every shot.
+ */
+function KioskStage({ shots, title }) {
+  const [lead, second, ...rest] = shots;
+
+  return (
+    <>
+      <div className="rail -mx-6 px-6 sm:hidden">
+        {shots.map((shot, i) => (
+          <KioskShot
+            key={i}
+            src={shot}
+            alt={`${title} screen ${i + 1}`}
+            className="w-[78vw]"
+          />
+        ))}
+      </div>
+
+      <div className="relative hidden pb-[16%] sm:block">
+        <div data-parallax={DEPTHS[0]} className="w-[70%]">
+          <KioskShot src={lead} alt={`${title} screen 1`} className="reveal-scale" />
+        </div>
+        {second && (
+          <div data-parallax={DEPTHS[1]} className="absolute bottom-0 right-0 w-[52%]">
+            <KioskShot
+              src={second}
+              alt={`${title} screen 2`}
+              className="reveal-scale"
+              style={{ "--reveal-delay": "140ms" }}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* The remaining screens sit under the pair as a supporting strip. */}
+      {rest.length > 0 && (
+        <div className="mt-6 hidden grid-cols-3 items-start gap-4 sm:grid">
+          {rest.map((shot, i) => (
+            <div key={i} data-parallax={DEPTHS[(i + 2) % DEPTHS.length]}>
+              <KioskShot
+                src={shot}
+                alt={`${title} screen ${i + 3}`}
+                className="reveal-scale"
+                style={{ "--reveal-delay": `${220 + i * 90}ms` }}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
 function DeviceGrid({ shots, title, preFramed }) {
   const cols = shots.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2";
   // Pre-framed art carries ~8% of dead margin per side, so it needs a wider
@@ -81,7 +154,7 @@ export default function ProjectShowcase({ projects }) {
       <div className="mx-auto max-w-[1040px] px-6 pt-28 pb-4">
         <p className="eyebrow reveal">Selected work</p>
         <h2 className="headline reveal mt-3 text-4xl md:text-6xl" style={{ "--reveal-delay": "80ms" }}>
-          Seven products.
+          Eight products.
           <br />
           <span style={{ color: "var(--text-dim)" }}>One obsession with detail.</span>
         </h2>
@@ -157,11 +230,15 @@ export default function ProjectShowcase({ projects }) {
                   scrolling rail's content width would inflate the column and
                   push the whole page into horizontal scroll on phones. */}
               <div className={`min-w-0 ${flipped ? "lg:order-1" : ""}`}>
-                <DeviceGrid
-                  shots={project.shots}
-                  title={project.title}
-                  preFramed={project.preFramed}
-                />
+                {project.layout === "kiosk" ? (
+                  <KioskStage shots={project.shots} title={project.title} />
+                ) : (
+                  <DeviceGrid
+                    shots={project.shots}
+                    title={project.title}
+                    preFramed={project.preFramed}
+                  />
+                )}
               </div>
             </div>
           </article>
