@@ -3,6 +3,9 @@
   "name": "rectify",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "ggh-pages -b main -d build",
