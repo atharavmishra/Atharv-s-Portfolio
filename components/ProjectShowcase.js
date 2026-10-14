@@ -224,6 +224,21 @@ export default function ProjectShowcase({ projects }) {
                     <HiChevronRight className="chev text-xl" />
                   </button>
                 )}
+
+                {project.apk && (
+                  <a
+                    href={project.apk.url}
+                    download
+                    className="chev-link reveal mt-7"
+                    style={{ "--reveal-delay": "260ms" }}
+                  >
+                    Download APK
+                    <span style={{ color: "var(--text-dim)", fontSize: "0.875rem" }}>
+                      &nbsp;· {[project.apk.version, project.apk.size].filter(Boolean).join(" · ")}
+                    </span>
+                    <HiChevronRight className="chev text-xl" />
+                  </a>
+                )}
               </div>
 
               {/* min-w-0: a grid item defaults to min-width:auto, so the

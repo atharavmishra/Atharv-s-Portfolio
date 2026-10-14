@@ -40,6 +40,10 @@ import kiosk5 from "../public/kiosk_5.png";
 const openExternal = (url) => () => window.open(url, "_blank", "noopener,noreferrer");
 
 const PLAY = "https://play.google.com/store/apps/details?id=";
+// Drive's direct-download endpoint; confirm=t skips the "can't scan for
+// viruses" interstitial Drive shows for large APKs.
+const DRIVE_APK = (id) =>
+  `https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t`;
 
 export default function Home() {
   useScrollFx();
@@ -109,6 +113,7 @@ export default function Home() {
       tags: ["Android", "Digital payments", "Unattended UX"],
       shots: [selfCheckout1, selfCheckout2, selfCheckout3],
       preFramed: true,
+      apk: { url: DRIVE_APK("1iLrFlOi6FubhyHSPLU9yu8NSHx7qKRHX"), version: "v2.0.7", size: "219 MB" },
     },
     {
       eyebrow: "Augmented reality",
@@ -125,6 +130,7 @@ export default function Home() {
         "A kiosk app for amusement parks where guests browse attractions, pick a time slot and set party size. Live backend integration keeps availability honest, and QR thermal tickets print instantly for frictionless ride admission.",
       tags: ["Flutter", "Live availability", "Thermal printing"],
       shots: [slot1, slot2, slot3, slot4],
+      apk: { url: DRIVE_APK("1LTLt7NlmDzC3lTAvu8tN7uw9ZeM9NiQb"), version: "v1.0.3", size: "90 MB" },
     },
     {
       eyebrow: "Kiosk · Flutter",
@@ -134,6 +140,7 @@ export default function Home() {
       tags: ["Flutter", "Bloc", "Combo builder", "Card & UPI", "White-label"],
       // Menu, combo builder, then the customise flow and the order review.
       shots: [kiosk1, kiosk2, kiosk4, kiosk5, kiosk3],
+      apk: { url: DRIVE_APK("1l6xXOtKRFWRN6ZcTg2beQSz4hdsVJzTr"), size: "76 MB" },
       layout: "kiosk",
     },
   ];
