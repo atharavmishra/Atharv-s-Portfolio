@@ -106,6 +106,47 @@ function KioskStage({ shots, title }) {
   );
 }
 
+/**
+ * Landscape POS tablet screens. Unlike a portrait kiosk, three landscape shots
+ * fit as one overlapping cluster: a large lead screen, a second tucked under
+ * its right edge and a third under its bottom-left, so none is left stranded
+ * in a strip. The fixed aspect box lets the absolute screens be placed as a
+ * share of the column width.
+ */
+function TabletStage({ shots, title }) {
+  const [lead, second, third] = shots;
+  const placed = [
+    { src: second, className: "absolute right-0 top-[37%] z-[2] w-[58%]", delay: 140 },
+    { src: third, className: "absolute left-[3%] top-[62%] z-[1] w-[46%]", delay: 220 },
+  ].filter((s) => s.src);
+
+  return (
+    <>
+      <div className="rail -mx-6 px-6 sm:hidden">
+        {shots.map((shot, i) => (
+          <KioskShot key={i} src={shot} alt={`${title} screen ${i + 1}`} className="w-[86vw]" />
+        ))}
+      </div>
+
+      <div className="relative hidden aspect-[100/86] sm:block lg:-mr-10">
+        <div data-parallax={DEPTHS[0]} className="w-[86%]">
+          <KioskShot src={lead} alt={`${title} screen 1`} className="reveal-scale" />
+        </div>
+        {placed.map((s, i) => (
+          <div key={i} data-parallax={DEPTHS[i + 1]} className={s.className}>
+            <KioskShot
+              src={s.src}
+              alt={`${title} screen ${i + 2}`}
+              className="reveal-scale"
+              style={{ "--reveal-delay": `${s.delay}ms` }}
+            />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 function DeviceGrid({ shots, title, preFramed }) {
   const cols = shots.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2";
   // Pre-framed art carries ~8% of dead margin per side, so it needs a wider
@@ -154,7 +195,7 @@ export default function ProjectShowcase({ projects }) {
       <div className="mx-auto max-w-[1040px] px-6 pt-28 pb-4">
         <p className="eyebrow reveal">Selected work</p>
         <h2 className="headline reveal mt-3 text-4xl md:text-6xl" style={{ "--reveal-delay": "80ms" }}>
-          Eight products.
+          Ten products.
           <br />
           <span style={{ color: "var(--text-dim)" }}>One obsession with detail.</span>
         </h2>
@@ -245,7 +286,9 @@ export default function ProjectShowcase({ projects }) {
                   scrolling rail's content width would inflate the column and
                   push the whole page into horizontal scroll on phones. */}
               <div className={`min-w-0 ${flipped ? "lg:order-1" : ""}`}>
-                {project.layout === "kiosk" ? (
+                {project.layout === "tablet" ? (
+                  <TabletStage shots={project.shots} title={project.title} />
+                ) : project.layout === "kiosk" ? (
                   <KioskStage shots={project.shots} title={project.title} />
                 ) : (
                   <DeviceGrid

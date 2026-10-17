@@ -36,6 +36,13 @@ import kiosk2 from "../public/kiosk_2.png";
 import kiosk3 from "../public/kiosk_3.png";
 import kiosk4 from "../public/kiosk_4.png";
 import kiosk5 from "../public/kiosk_5.png";
+import ticketAdmission from "../public/ticket_admission.png";
+import ticketScan2 from "../public/ticket_scan_2.png";
+import ticketScan3 from "../public/ticket_scan_3.png";
+import ticketScan4 from "../public/ticket_scan_4.png";
+import fineDineTables from "../public/fine_dine_tables.png";
+import fineDineBilling from "../public/fine_dine_billing.png";
+import fineDineTransfer from "../public/fine_dine_transfer.png";
 
 const openExternal = (url) => () => window.open(url, "_blank", "noopener,noreferrer");
 
@@ -61,6 +68,26 @@ export default function Home() {
   };
 
   const projects = [
+    {
+      eyebrow: "Restaurant POS · Flutter",
+      title: "Fine Dine",
+      description:
+        "The table-service side of the QueueBuster POS. Staff see every floor and room at a glance — empty, occupied, order running or bill printed — then merge, split, transfer or empty tables in a couple of taps. Orders fire to the kitchen as KOTs, and a WebSocket sync keeps the POS and every captain's handheld on the same table state, with offline changes queued until the connection returns.",
+      tags: ["Flutter", "Bloc", "WebSocket sync", "KOT", "Offline-first", "RBAC"],
+      // Tables floor plan, an open table's bill with KOTs, then a table transfer.
+      shots: [fineDineTables, fineDineBilling, fineDineTransfer],
+      layout: "tablet",
+    },
+    {
+      eyebrow: "Access control · Flutter",
+      title: "Ticket & Slot Management",
+      description:
+        "The entry side of park ticketing: check-in at the main gates, and an unattended ride gate mounted on a flap barrier. Guests scan their QR, the slot is validated live and a HikVision barrier opens over ISAPI. Self-dismissing feedback, a configurable cooling period and a hard network timeout keep the line moving with no staff in sight.",
+      tags: ["Flutter", "Bloc", "HikVision ISAPI", "QR scanning", "Unattended UX"],
+      // Gate check-in, then the ride gate: a validated ticket, a rejected one
+      // and the cooling period.
+      shots: [ticketAdmission, ticketScan2, ticketScan3, ticketScan4],
+    },
     {
       eyebrow: "Fintech · Android",
       title: "Ora Finance",

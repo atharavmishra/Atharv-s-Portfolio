@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 const STATS = [
   { value: 3, suffix: "+", label: "Years shipping mobile" },
-  { value: 8, suffix: "", label: "Products built end to end" },
+  { value: 10, suffix: "", label: "Products built end to end" },
   { value: 4, suffix: "", label: "Live on Google Play" },
   { value: 6, suffix: "", label: "Core technologies" },
 ];
